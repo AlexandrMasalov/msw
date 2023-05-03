@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query"
 
 function App() {
 
-	const { isLoading, error, data } = useQuery(['starWars'], () => fetch('https://swapi.dev/api/people/1').then(res => res.json()));
+	// const { isLoading, error, data } = useQuery(['starWars'], () => fetch('https://swapi.dev/api/people/1').then(res => res.json()));
+	const { isLoading, error, data } = useQuery(['starWars'], () => fetch('user/1').then(res => res.json()));
 
 	if (isLoading) return 'Loading...';
 
@@ -10,7 +11,8 @@ function App() {
 
   return (
 		<>
-			{data.name}
+			{/* {data.name} */}
+			{data.login}
     </>
   )
 }
